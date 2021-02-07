@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aviasales Travelpayouts Widget</title>
+  </head>
+  <body>
+    <h1>Widgets Demo</h1>
+
+    <div>
+      <button type="button" onClick="initialize()">Инициализировать</button>
+      <button type="button" onclick="customize()">Кастомизировать</button>
+      <button type="button" onclick="destroy()">Уничтожить</button>
+    </div>
+
+    <hr />
+
+    <div id="tpo-widget" style="max-width: 1024px"></div>
+
+    <hr />
+
+    <div id="tpo-widget-2" style="max-width: 768px"></div>
+
+    <hr />
+
+    <div id="tpo-widget-3" style="max-width: 440px"></div>
+
+    <hr />
+
+    <div id="tpo-widget-4" style="max-width: 286px"></div>
+
+    <script>
+      const initialize = () => {
+        TpoWidget.init('tpo-widget')
+        TpoWidget.init('tpo-widget-2')
+        TpoWidget.init('tpo-widget-3')
+        TpoWidget.init('tpo-widget-4')
+      }
+
+      const customize = () => {
+        const options = {
+          title: 'Откуда это взялось? Почему мы это используем?',
+          description:
+            'Давно установлено, что читатель будет отвлекаться на удобочитаемое содержимое страницы при просмотре ее макета.',
+          backgroundColor: '#DBB3B1',
+          textColor: '#2C1A1D',
+          submitBackgroundColor: '#A67F8E',
+          departurePlaceholder: 'Дата вылета',
+          returnPlaceholder: 'Дата возвращения',
+          i18n: {
+            previousMonth: 'Предыдущий месяц',
+            nextMonth: 'Следующий месяц',
+            months: [
+              'Январь',
+              'Февраль',
+              'Март',
+              'Апрель',
+              'Май',
+              'Июнь',
+              'Июль',
+              'Август',
+              'Сентябрь',
+              'Октябрь',
+              'Ноябрь',
+              'Декабрь',
+            ],
+            weekdays: [
+              'Воскресенье',
+              'Понедельник',
+              'Вторник',
+              'Среда',
+              'Четверг',
+              'Пятница',
+              'Суббота',
+            ],
+            weekdaysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+          },
+        }
+
+        TpoWidget.init('tpo-widget', options)
+        TpoWidget.init('tpo-widget-2', options)
+        TpoWidget.init('tpo-widget-3', options)
+        TpoWidget.init('tpo-widget-4', options)
+      }
+
+      const destroy = () => {
+        TpoWidget.destroy('tpo-widget')
+        TpoWidget.destroy('tpo-widget-2')
+        TpoWidget.destroy('tpo-widget-3')
+        TpoWidget.destroy('tpo-widget-4')
+      }
+
+      document.addEventListener('DOMContentLoaded', initialize)
+    </script>
+  </body>
+</html>

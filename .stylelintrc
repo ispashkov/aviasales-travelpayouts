@@ -1,0 +1,7 @@
+{
+  "extends": ["stylelint-config-recommended", "stylelint-config-prettier"],
+  "ignoreFiles": "node_modules/**/*.css",
+  "rules": {
+    "no-descending-specificity": null
+  }
+}

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import "~pikaday/css/pikaday.css";
+
+.tpo-widget {
+  display: grid;
+  margin: 0 auto;
+  padding: 8px 20px 15px;
+  background-color: var(--tpo-widget-background-color);
+  color: var(--tpo-widget-text-color);
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.tpo-widget__title {
+  display: block;
+  grid-column: 1 / -1;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.tpo-widget__description {
+  display: block;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  box-sizing: border-box;
+}
+
+.tpo-widget-datepicker {
+  display: grid;
+  box-sizing: border-box;
+}
+
+.tpo-widget-datepicker-box {
+  display: block;
+  background-color: #fff;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+  position: relative;
+}
+
+.tpo-widget-datepicker-box:hover,
+.tpo-widget-datepicker-box:focus-within {
+  border-color: var(--tpo-widget-submit-background-color);
+}
+
+.tpo-widget-datepicker__input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 28px 0 14px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.tpo-widget-datepicker__icon {
+  width: 15px;
+  height: 17px;
+  fill: var(--tpo-widget-background-color);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.tpo-widget-datepicker__input::placeholder {
+  color: #9b9b9b;
+}
+
+.tpo-widget__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--tpo-widget-submit-background-color);
+  color: var(--tpo-widget-text-color);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.tpo-widget__submit:hover {
+  opacity: 0.9;
+}
+
+/**
+  Large styles(size <= 1024px)
+ */
+.tpo-widget--large {
+  grid-template-columns: minmax(200px, 284px) auto minmax(max-content, 240px);
+  grid-gap: 10px 20px;
+  max-width: 1024px;
+}
+
+.tpo-widget--large .tpo-widget-datepicker {
+  grid-template-columns: repeat(2, minmax(160px, 240px));
+  grid-column-gap: 20px;
+}
+
+/**
+  Tablet styles(size <= 768px)
+ */
+
+.tpo-widget--medium {
+  grid-template-columns: auto minmax(120px, 240px);
+  grid-column-gap: 28px;
+}
+
+.tpo-widget--medium .tpo-widget__title {
+  margin-bottom: 10px;
+}
+
+.tpo-widget--medium .tpo-widget__description {
+  grid-column: 1 / -1;
+  margin-bottom: 15px;
+}
+
+.tpo-widget--medium .tpo-widget-datepicker {
+  grid-template-columns: repeat(2, minmax(160px, 240px));
+  grid-column-gap: 20px;
+}
+
+/**
+  Mobile styles(size <= 580px)
+ */
+
+.tpo-widget--small {
+  grid-template-columns: unset;
+}
+
+.tpo-widget--small .tpo-widget__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.tpo-widget--small .tpo-widget__description {
+  grid-column: 1 / -1;
+  margin-bottom: 15px;
+}
+
+.tpo-widget--small .tpo-widget-datepicker {
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  margin-bottom: 20px;
+}
+
+/**
+  Extra small styles(size <= 286px)
+ */
+
+.tpo-widget--extraSmall {
+  grid-template-columns: unset;
+}
+
+.tpo-widget--extraSmall .tpo-widget__title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.tpo-widget--extraSmall .tpo-widget__description {
+  grid-column: 1 / -1;
+  order: 5;
+  margin-bottom: 15px;
+}
+
+.tpo-widget--extraSmall .tpo-widget-datepicker {
+  grid-template-columns: unset;
+  grid-row-gap: 15px;
+  margin-bottom: 15px;
+}
+
+.tpo-widget--extraSmall .tpo-widget__submit {
+  margin-bottom: 15px;
+}
