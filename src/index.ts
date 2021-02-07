@@ -1,5 +1,4 @@
-import TpoWidget from './tpo-widget'
-import { TpoWidgetOptions } from './types/tpoWidgetOptions'
+import TpoWidget, { TpoWidgetOptions } from './tpo-widget'
 import './styles.css'
 
 export default {
